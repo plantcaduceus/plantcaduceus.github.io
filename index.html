@@ -1,55 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>plantCaduceus</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="PlantCaducues Project Page">
+  <meta property="og:title" content="PlantCaducues"/>
+  <meta property="og:description" content="PlantCaduceus: Cross-species Modeling of Plant Genomes at Single Nucleotide Resolution"/>
+  <meta property="og:url" content="https://kuleshov-group.github.io/caduceus.github.io/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/caduceus.png" />
+  <meta property="og:image:width" content="630"/>
+  <meta property="og:image:height" content="630"/>
+
+  <title>PlantCaduceus project page</title>
+  <style>
+    .subtitle {
+        margin-top: 20px; /* Adjust the value as needed */
+    }
+  </style>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  
 </head>
 <body>
-    <header>
-        <h1>Welcome to plantCaduceus</h1>
-    </header>
-    <main>
-        <h2>About plantCaduceus</h2>
-        <p>plantCaduceus is a project focused on the bioinformatics analysis of plant genomes. Our goal is to provide insights and tools for the study of plant DNA, aiding researchers in their quest to understand plant biology and improve crop production.</p>
-        
-        <h2>Our Mission</h2>
-        <p>Our mission is to harness the power of bioinformatics to unlock the secrets of plant genomes. We aim to facilitate research and innovation in plant science through comprehensive data analysis and accessible tools.</p>
-        
-        <h2>Contact Us</h2>
-        <p>For more information, please reach out to us at <a href="mailto:contact@plantcaduceus.com">contact@plantcaduceus.com</a>.</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 plantCaduceus. All rights reserved.</p>
-    </footer>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <img src="static/images/favicon.ico" alt="Caduceus" style="width:50px;height:50px;">
+            PlantCaduceus: Cross-species Modeling of Plant Genomes at Single Nucleotide Resolution
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+                <a href="https://www.maizegenetics.net/jingjingzhai" target="_blank">Jingjing Zhai<sup>1</sup></a>,
+              </span>
+            <span class="author-block">
+                <a href="https://skylion007.github.io/" target="_blank">Aaron Gokaslan<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://yair-schiff.github.io/" target="_blank">Yair Schiff<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.maizegenetics.net/anaberthel" target="_blank">Ana Berthel<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.maizegenetics.net/zong-yan-liu" target="_blank">Zong-Yan Liu<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.maizegenetics.net/zackmiller" target="_blank">Zachary R. Miller<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.cshl.edu/research/postdoctoral-research/postdocs/armin-scheben/" target="_blank">Armin Scheben<sup>3</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://mcstitzer.github.io" target="_blank">Michelle C. Stitzer<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.maizegenetics.net/cintaromay" target="_blank">M. Cinta Romay<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.maizegenetics.net/edwardbuckler" target="_blank">Edward S. Buckler<sup>1,2</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.cs.cornell.edu/~kuleshov" target="_blank">Volodymyr Kuleshov<sup>1</sup></a>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup>1</sup>
+              Cornell University&nbsp;
+              <img src="static/images/cornell.png" alt="Cornell" style="float:right;width:30px;height:30px;">
+            </span>
+            <span class="author-block">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>
+              USDA-ARS&nbsp;
+              <img src="static/images/USDA.png" alt="USDA" style="float:right;width:40px;height:30px;">
+            </span>
+            <span class="author-block">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup>
+              Cold Spring Harbor Laboratory&nbsp;
+              <img src="static/images/CSHL.webp" alt="CSHL" style="float:right;width:60px;height:30px;">
+              </span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- ArXiv abstract Link -->
+              <span class="link-block">
+                <a href="https://www.biorxiv.org/content/10.1101/2024.06.04.596709v2" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>bioRxiv</span>
+                </a>
+              </span>
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/kuleshov-group/PlantCaduceus" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </span>
+              <!-- HuggingFace link -->
+              <span class="link-block">
+                <a href="https://huggingface.co/collections/kuleshov-group/plantcaduceus-512bp-len-665a229ee098db706a55e44a" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p>&#129303;</p>
+                  </span>
+                  <span>HuggingFace</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Introduction -->
+<section class="section" id="Introduction">
+  <div class="container is-max-desktop">
+    <h2 class="title">Introduction</h2>
+    <div class="content is-medium">
+      <p class="justified-text">
+      Plant genomes are diverse in size, composition, and complexity, and while extensive genomic resources exist for model plants. Generating analogous genomic resources experimentally for all plant genomes is time-consuming, costly, and impractical. This highlights the need for developing cross-species models capable of capturing evolutionary conservation across diverse plant species.
+      </p>
+    </div>
+      <img src="static/images/Transfer-to-crops.png" alt="Model plant to crops"/>
+  </div>
+</section>
+<!-- End Introduction-->
+
+<!-- Introduction -->
+<section class="section" id="Introduction">
+  <div class="container is-max-desktop">
+    <h2 class="title">Why DNA Language Model?</h2>
+    <div class="content is-medium">
+      <p class="justified-text">
+        Supervised sequence models have acquired great success in understanding DNA sequence function but typically require large-scale labeled data, such as ENCODE-scale datasets, to achieve robust performance. Such extensive labeled data is often scarce in plant genomics. However, the success of self-supervised language models (LMs) offers a promising alternative. In this paradigm, a base model is pre-trained on vast amounts of unlabeled biological sequences to learn evolutionary conservation. Pre-trained models are then fine-tuned on limited labeled data, enabling better performance on downstream tasks and enhancing generalizability across species relative to existing methods.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End Introduction-->
+
+<!--Intro Caduceus-->
+<section class="section" id="Intro PlantCaduceus">
+  <div class="container is-max-desktop">
+    <h2 class="title">Introducing PlantCaduceus</h2>
+    <div class="content is-medium">
+      <p class="justified-text">
+      PlantCaduceus builds upon Caduceus <a href="https://arxiv.org/abs/2403.03234" target="_blank">(Schiff et al., 2024)</a> and Mamba <a href="https://arxiv.org/abs/2312.00752" target="_blank">(Gu et al., 2023)</a> architectures to model diverse  genomes at single nucleotide resolution. PlantCaduceus is trained on 16 Angiosperm genomes, to capture evolutionary conservation and variation across species. We trained PlantCaduceus on 16 Angiosperm genomes, spanning 160 million years of evolutionary history. PlantCaduceus takes 512 base pair (bp) windows of input sequences, tokenizing them into single nucleotides, and is pre-trained using a masked language modeling objective. To address the substantial variation in genome sizes and the high proportion of repetitive sequences in these genomes, we emphasized non-repetitive sequences by down-weighting repetitive sequences during pre-training.  
+      </p>      
+    </div>
+    <div class="columns is-centered">
+      <img src="static/images/PlantCaduceus.png" alt="Pretraining of PlantCaduceus" style="width:70%;height:70%; display: block; margin-left: auto; margin-right: auto;"/>
+    </div>
+  </div>
+</section>
+<!-- End Intro Caduceus--->
+
+
+<!-- Experiments -->
+<section class="section" id="Experiments">
+  <div class="container is-max-desktop">
+    <h2 class="title">Experiments</h2>
+    <div>
+      <h2 class="subtitle"> Benchmark models</h2>
+    </div>
+    <div class="content is-medium">
+      <ul>
+        <li>Supervised CNN + LSTM: For each task, we trained a convolutional and recurrent neural network <a href="https://academic.oup.com/nar/article/44/11/e107/2468300" target="_blank">(Quang et al., 2016)</a> from scratch using one-hot encoded DNA sequences as input. The Adam optimizer with a learning rate of 0.01 was employed for model optimization. The batch size was set to 2,048. Early stopping with a patience of 20 steps was implemented. </li>
+        <li>Nucleotide transformer <a href="" target="_blank">(Hugo et al., 2023)</a> is a non-plant multi-species transformer DNA LM, we used the multi-species version 2 that was pre-trained on 850 genomes, hereafter referred to as NT-v2. </li>
+        <li>AgroNT <a href="https://www.biorxiv.org/content/10.1101/2023.10.24.563624v2" target="">(Javier et al., 2023)</a> is a transformer-based DNA LM with one billion parameters, pre-trained on 48 plant genomes. </li>
+        <li>GPN <a href="https://www.pnas.org/doi/full/10.1073/pnas.2311219120" target="_blank">(Benegas et al., 2023)</a> is a convolutional DNA LM pre-trained on eight genomes from the Brassicales order. </li>
+        </p>
+    </ul>
+    </div>
+    <div>
+      <h2 class="subtitle"> Modeling translation initiation and termination sites</h2>
+    </div>
+
+    <div class="content is-medium">
+      <p class="justified-text">
+        Accurate annotation of translation initiation site (TIS) and translation termination site (TTS), and splice donor and acceptor sites, is crucial in understanding the genome. To evaluate PlantCaduceus’s performance on these tasks, we generated training and validation datasets using Arabidopsis thaliana TAIR10, a relatively well-annotated genome released over two decades ago. Specifically, annotated TIS and TTS were considered as true sites,  while the corresponding false sites were randomly selected from the entire genome to match corresponding motifs, such as ATG for TIS, stop codons for TTS. To evaluate the cross-species transferability of fine-tuned PlantCaduceus, we generated three extremely imbalanced cross-species testing datasets for rice, sorghum, and maize. We found PlantCaduceus outperformed all benchmark models on TIS and TTS tasks, outperforming the best benchmark model GPN by XXX% and XXX% for TIS and TTS, respectively.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="static/images/experiments/Modeling_translation.png" alt="Modeling translation" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;">
+      </div>
+    </div>
+    
+    <div>
+      <h2 class="subtitle">Modeling splice donor and acceptor sites</h2>
+    </div>
+
+    <div class="content is-medium">
+      <p class="justified-text">
+        With similar way as TIS and TTS, we generated training, validation and testing datasets for splice donor and acceptor tasks. We found PlantCaduceus outperformed all benchmark models on splice donor and acceptor sites tasks, outperforming the best benchmark model GPN by XXX% and XXX% for splice donor and acceptor sites, respectively.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="static/images/experiments/Modeling_transcription.png" alt="Modeling transcription" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;">
+      </div>
+    </div>
+
+    <div>
+      <h2 class="subtitle">Prioritizing deleterious mutations by zero-shot strategt</h2>
+    </div>
+
+    <div class="content is-medium">
+      <p class="justified-text">
+        The training objective of PlantCaduceus is to predict masked nucleotides based on sequence context; if a pre-trained multi-species DNA LM can accurately predict masked tokens, it suggests that similar sequence patterns, conserved across different species, were frequently observed during pre-training. We hypothesize that the predicted likelihood of the reference allele versus the alternate allele can identify deleterious mutations, as mutations in conserved regions across species are likely deleterious. Deleterious mutations tend to have lower frequencies within a population due to selective constraints, we therefore used minor allele frequency (MAF) to quantify the deleteriousness of mutations predicted by different methods. Despite the potential for low MAF in neutral/beneficial alleles, we believe this approach provides useful signals for assessing deleterious mutations. Both phyloP and phastCons assess evolutionary constraint using multiple sequence alignments and phylogenetic models (METHODS), assigning higher scores to conserved regions. We found the deleterious mutations identified with the zero-shot strategy of PlantCaduceus show a three-fold enrichment of rare alleles compared to the most commonly used evolutionary-based methods such as phyloP and phastCons. For missense mutations, PlantCaduceus matches the performance of the state-of-the-art protein LMs.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <img src="static/images/experiments/Deleterious_mutations.png" alt="Deleterious mutations" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;">
+      </div>
+    </div>
+    </div>
+
+
+  <!-- End Experiments-->
+
+<!-- Conclusion -->
+<section class="section" id="Conclusion">
+  <div class="container is-max-desktop">
+    <h2 class="title">Conclusion</h2>
+    <div class="content is-medium">
+      <p class="justified-text">
+        In this work, we introduced PlantCaduceus, a multi-species plant DNA LM pretrained on a well-curated set of 16 evolutionarily distant Angiosperm genomes, enabling cross-species prediction of functional annotations with limited data. PlantCaduceus leverages Mamba and Caduceus architectures to support bi-directional, reverse complement equivariant sequence modeling. We demonstrated the superior cross-species performance of PlantCaduceus on five tasks involving transcription, translation, and evolutionary constraint modeling. These results highlight the potential of PlantCaduceus to serve as a foundational model for comprehensively understanding plant genomes.
+      </p>
+    </div>
+  </div>
+<!-- End Experiments-->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article {Zhai2024.06.04.596709,
+          author = {Zhai, Jingjing and Gokaslan, Aaron and Schiff, Yair and Berthel, Ana and Liu, Zong-Yan and Miller, Zachary R and Scheben, Armin and Stitzer, Michelle C and Romay, Cinta and Buckler, Edward S. and Kuleshov, Volodymyr},
+          title = {Cross-species plant genomes modeling at single nucleotide resolution using a pre-trained DNA language model},
+          elocation-id = {2024.06.04.596709},
+          year = {2024},
+          doi = {10.1101/2024.06.04.596709},
+          URL = {https://www.biorxiv.org/content/early/2024/06/05/2024.06.04.596709},
+          eprint = {https://www.biorxiv.org/content/early/2024/06/05/2024.06.04.596709.full.pdf},
+          journal = {bioRxiv}
+      }      
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content is-medium">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
 </body>
 </html>
