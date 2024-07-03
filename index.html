@@ -146,10 +146,11 @@
     <h2 class="title">Introduction</h2>
     <div class="content is-medium">
       <p class="justified-text">
-      Plant genomes are diverse in size, composition, and complexity, and while extensive genomic resources exist for model plants. Generating analogous genomic resources experimentally for all plant genomes is time-consuming, costly, and impractical. This highlights the need for developing cross-species models capable of capturing evolutionary conservation across diverse plant species.
+      Understanding plant genomes is crucial for plant breeding, agricultural productivity, and sustainability. However, plant genomes are diverse in size, composition, and complexity, experimentally generating analogous genomic resources for hundreds of thousands of plant species is challenging and impractical. This highlights the need for developing cross-species models capable of capturing evolutionary conservation across diverse plant species.
+
       </p>
     </div>
-      <img src="static/images/Transfer-to-crops.png" alt="Model plant to crops"/>
+    <img src="static/images/Transfer-to-crops.png" alt="Model plant to crops" style="width:70%;height:70%; display: block; margin-left: auto; margin-right: auto;"/>
   </div>
 </section>
 <!-- End Introduction-->
@@ -160,7 +161,7 @@
     <h2 class="title">Why DNA Language Model?</h2>
     <div class="content is-medium">
       <p class="justified-text">
-        Supervised sequence models have acquired great success in understanding DNA sequence function but typically require large-scale labeled data, such as ENCODE-scale datasets, to achieve robust performance. Such extensive labeled data is often scarce in plant genomics. However, the success of self-supervised language models (LMs) offers a promising alternative. In this paradigm, a base model is pre-trained on vast amounts of unlabeled biological sequences to learn evolutionary conservation. Pre-trained models are then fine-tuned on limited labeled data, enabling better performance on downstream tasks and enhancing generalizability across species relative to existing methods.
+        Supervised sequence models are successful in understanding DNA sequence function but typically require large-scale labeled data, such as ENCODE-scale datasets, to achieve robust performance. Such extensive labeled data is often scarce in plant genomics. However, the success of self-supervised language models (LMs) offers a promising alternative. In this paradigm, a base model is pre-trained on vast amounts of unlabeled biological sequences to learn evolutionary conservation. Pre-trained models are then fine-tuned on limited labeled data, enabling better performance on downstream tasks and enhancing generalizability across species relative to existing methods.
       </p>
     </div>
   </div>
@@ -173,7 +174,7 @@
     <h2 class="title">Introducing PlantCaduceus</h2>
     <div class="content is-medium">
       <p class="justified-text">
-      PlantCaduceus builds upon Caduceus <a href="https://arxiv.org/abs/2403.03234" target="_blank">(Schiff et al., 2024)</a> and Mamba <a href="https://arxiv.org/abs/2312.00752" target="_blank">(Gu et al., 2023)</a> architectures to model diverse  genomes at single nucleotide resolution. PlantCaduceus is trained on 16 Angiosperm genomes, to capture evolutionary conservation and variation across species. We trained PlantCaduceus on 16 Angiosperm genomes, spanning 160 million years of evolutionary history. PlantCaduceus takes 512 base pair (bp) windows of input sequences, tokenizing them into single nucleotides, and is pre-trained using a masked language modeling objective. To address the substantial variation in genome sizes and the high proportion of repetitive sequences in these genomes, we emphasized non-repetitive sequences by down-weighting repetitive sequences during pre-training.  
+      PlantCaduceus builds upon Caduceus <a href="https://arxiv.org/abs/2403.03234" target="_blank">(Schiff et al., 2024)</a> and Mamba <a href="https://arxiv.org/abs/2312.00752" target="_blank">(Gu et al., 2023)</a> architectures to model diverse  genomes at single nucleotide resolution. PlantCaduceus is trained on 16 Angiosperm genomes spanning 160 million years of evolutionary history, to capture evolutionary conservation and variation across species. PlantCaduceus takes 512 base pair (bp) windows of input sequences, tokenizing them into single nucleotides, and is pre-trained using a masked language modeling objective.
       </p>      
     </div>
     <div class="columns is-centered">
@@ -193,9 +194,9 @@
     </div>
     <div class="content is-medium">
       <ul>
-        <li>Supervised CNN + LSTM: For each task, we trained a convolutional and recurrent neural network <a href="https://academic.oup.com/nar/article/44/11/e107/2468300" target="_blank">(Quang et al., 2016)</a> from scratch using one-hot encoded DNA sequences as input. The Adam optimizer with a learning rate of 0.01 was employed for model optimization. The batch size was set to 2,048. Early stopping with a patience of 20 steps was implemented. </li>
-        <li>Nucleotide transformer <a href="" target="_blank">(Hugo et al., 2023)</a> is a non-plant multi-species transformer DNA LM, we used the multi-species version 2 that was pre-trained on 850 genomes, hereafter referred to as NT-v2. </li>
-        <li>AgroNT <a href="https://www.biorxiv.org/content/10.1101/2023.10.24.563624v2" target="">(Javier et al., 2023)</a> is a transformer-based DNA LM with one billion parameters, pre-trained on 48 plant genomes. </li>
+        <li>Supervised CNN + LSTM: For each task, we trained a convolutional and recurrent neural network <a href="https://academic.oup.com/nar/article/44/11/e107/2468300" target="_blank">(Quang et al., 2016)</a> from scratch using one-hot encoded DNA sequences as input. </li>
+        <li>Nucleotide transformer <a href="" target="_blank">(Hugo et al., 2023)</a> is a multi-species non-plant transformer DNA LM, we used the multi-species version 2 that was pre-trained on 850 genomes, hereafter referred to as NT-v2. </li>
+        <li>AgroNT <a href="https://www.biorxiv.org/content/10.1101/2023.10.24.563624v2" target="">(Javier et al., 2023)</a> is a multi-species plant transformer DNA LM pre-trained on 48 plant genomes. </li>
         <li>GPN <a href="https://www.pnas.org/doi/full/10.1073/pnas.2311219120" target="_blank">(Benegas et al., 2023)</a> is a convolutional DNA LM pre-trained on eight genomes from the Brassicales order. </li>
         </p>
     </ul>
@@ -206,7 +207,7 @@
 
     <div class="content is-medium">
       <p class="justified-text">
-        Accurate annotation of translation initiation site (TIS) and translation termination site (TTS), and splice donor and acceptor sites, is crucial in understanding the genome. To evaluate PlantCaduceus’s performance on these tasks, we generated training and validation datasets using Arabidopsis thaliana TAIR10, a relatively well-annotated genome released over two decades ago. Specifically, annotated TIS and TTS were considered as true sites,  while the corresponding false sites were randomly selected from the entire genome to match corresponding motifs, such as ATG for TIS, stop codons for TTS. To evaluate the cross-species transferability of fine-tuned PlantCaduceus, we generated three extremely imbalanced cross-species testing datasets for rice, sorghum, and maize. We found PlantCaduceus outperformed all benchmark models on TIS and TTS tasks, outperforming the best benchmark model GPN by XXX% and XXX% for TIS and TTS, respectively.
+        Accurate prediction of translation initiation site (TIS), translation termination site (TTS), and splice donor and acceptor sites, is crucial in gene annotation. To explore PlantCaduceus's performance on gene annotation tasks, we generated training and validation datasets for these four tasks, using Arabidopsis thaliana TAIR10, a relatively well-annotated genome released over two decades ago. To evaluate the cross-species prediction performance, we generated three extremely imbalanced cross-species testing datasets for rice, sorghum, and maize. With only training on Arabidopsis, PlantCaduceus outperformed all benchmark models on TIS and TTS tasks, outperforming the best benchmark model GPN by 7.23-fold and 3.75-fold for TIS and TTS when transfered to 160 million year diverged maize, respectively.
       </p>
     </div>
     <div class="columns is-centered">
@@ -221,7 +222,7 @@
 
     <div class="content is-medium">
       <p class="justified-text">
-        With similar way as TIS and TTS, we generated training, validation and testing datasets for splice donor and acceptor tasks. We found PlantCaduceus outperformed all benchmark models on splice donor and acceptor sites tasks, outperforming the best benchmark model GPN by XXX% and XXX% for splice donor and acceptor sites, respectively.
+        With similar way as TIS and TTS, we generated training, validation and testing datasets for splice donor and acceptor tasks. We found PlantCaduceus outperformed all benchmark models on splice donor and acceptor sites tasks, outperforming the best benchmark model GPN by 1.47-fold and 1.45-fold for splice donor and acceptor sites, respectively.
       </p>
     </div>
     <div class="columns is-centered">
@@ -231,12 +232,15 @@
     </div>
 
     <div>
-      <h2 class="subtitle">Prioritizing deleterious mutations by zero-shot strategt</h2>
+      <h2 class="subtitle">Prioritizing deleterious mutations by zero-shot strategy</h2>
     </div>
 
     <div class="content is-medium">
       <p class="justified-text">
-        The training objective of PlantCaduceus is to predict masked nucleotides based on sequence context; if a pre-trained multi-species DNA LM can accurately predict masked tokens, it suggests that similar sequence patterns, conserved across different species, were frequently observed during pre-training. We hypothesize that the predicted likelihood of the reference allele versus the alternate allele can identify deleterious mutations, as mutations in conserved regions across species are likely deleterious. Deleterious mutations tend to have lower frequencies within a population due to selective constraints, we therefore used minor allele frequency (MAF) to quantify the deleteriousness of mutations predicted by different methods. Despite the potential for low MAF in neutral/beneficial alleles, we believe this approach provides useful signals for assessing deleterious mutations. Both phyloP and phastCons assess evolutionary constraint using multiple sequence alignments and phylogenetic models (METHODS), assigning higher scores to conserved regions. We found the deleterious mutations identified with the zero-shot strategy of PlantCaduceus show a three-fold enrichment of rare alleles compared to the most commonly used evolutionary-based methods such as phyloP and phastCons. For missense mutations, PlantCaduceus matches the performance of the state-of-the-art protein LMs.
+        The training objective of PlantCaduceus is to predict masked nucleotides based on sequence context; if a pre-trained multi-species DNA LM can accurately predict masked tokens, it suggests that similar sequence patterns, conserved across different species, were frequently observed during pre-training. We hypothesize that the predicted likelihood of the reference allele versus the alternate allele can identify deleterious mutations, as mutations in conserved regions across species are likely deleterious. 
+      </p>
+      <p class="justified-text"></p>
+        Deleterious mutations tend to have lower frequencies within a population due to selective constraints, we therefore used minor allele frequency (MAF) to quantify the deleteriousness of mutations predicted by different methods. Despite the potential for low MAF in neutral/beneficial alleles, we believe this approach provides useful signals for assessing deleterious mutations. Both phyloP and phastCons assess evolutionary constraint using multiple sequence alignments and phylogenetic models, assigning higher scores to conserved regions. We found the deleterious mutations identified with the zero-shot strategy of PlantCaduceus show a three-fold enrichment of rare alleles compared to phastCons. For missense mutations, PlantCaduceus matches the performance of the state-of-the-art protein LM.
       </p>
     </div>
     <div class="columns is-centered">
@@ -255,7 +259,7 @@
     <h2 class="title">Conclusion</h2>
     <div class="content is-medium">
       <p class="justified-text">
-        In this work, we introduced PlantCaduceus, a multi-species plant DNA LM pretrained on a well-curated set of 16 evolutionarily distant Angiosperm genomes, enabling cross-species prediction of functional annotations with limited data. PlantCaduceus leverages Mamba and Caduceus architectures to support bi-directional, reverse complement equivariant sequence modeling. We demonstrated the superior cross-species performance of PlantCaduceus on five tasks involving transcription, translation, and evolutionary constraint modeling. These results highlight the potential of PlantCaduceus to serve as a foundational model for comprehensively understanding plant genomes.
+        We introduced PlantCaduceus, a multi-species plant DNA LM pretrained on a curated set of 16 evolutionarily distant Angiosperm genomes, enabling cross-species prediction of functional annotations with limited data. PlantCaduceus leverages Mamba and Caduceus architectures to support bi-directional, reverse complement equivariant sequence modeling. We demonstrated the superior cross-species performance of PlantCaduceus on five tasks involving transcription, translation, and evolutionary constraint modeling. These results highlight the potential of PlantCaduceus to serve as a foundational model for comprehensively understanding plant genomes.
       </p>
     </div>
   </div>
